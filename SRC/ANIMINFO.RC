@@ -1,0 +1,37 @@
+/********************************************************************** 
+ * 
+ *  NAME:         GETINT.RC 
+ * 
+ *  DESCRIPTION:  
+ * 
+ *  M O D I F I C A T I O N   H I S T O R Y 
+ * 
+ *  version when     who what 
+ *  -------------------------------------------------------------------
+ *          11. 8.95 MHM added headers 
+ * 
+ *********************************************************************/ 
+ 
+// ObjectWindows - (C) Copyright 1992 by Borland International
+
+#ifdef _WINMORPH_RC
+	#include <windows.h>
+	#include <..\..\..\bc31\owl\include\owlrc.h>
+	#include "winmorph.rch"
+#endif
+ 
+AnimInfoDlg DIALOG 18, 18, 176, 52
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Animation Information"
+BEGIN
+	RTEXT "File name:", -1, 4, 4, 40, 12, SS_RIGHT | WS_CHILD | WS_VISIBLE | WS_GROUP
+	CONTROL "girlchta.bmp", ID_ANIM_FILENAME, "STATIC", WS_CHILD | WS_VISIBLE | WS_GROUP, 44, 4, 128, 12
+	RTEXT "Resolution:", -1, 4, 20, 40, 12, SS_RIGHT | WS_CHILD | WS_VISIBLE | WS_GROUP
+	RTEXT "800", ID_ANIM_RES_X, 44, 20, 20, 12, SS_RIGHT | WS_CHILD | WS_VISIBLE | WS_GROUP
+	RTEXT "Frames:", -1, 100, 20, 32, 12, SS_RIGHT | WS_CHILD | WS_VISIBLE | WS_GROUP
+	LTEXT "30", ID_ANIM_FRAMES, 132, 20, 32, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	PUSHBUTTON "Ok", IDOK, 44, 36, 92, 12, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+	CTEXT "x", -1, 64, 20, 8, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	LTEXT "600", ID_ANIM_RES_Y, 72, 20, 20, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+END
+

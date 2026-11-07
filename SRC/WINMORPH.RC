@@ -1,0 +1,332 @@
+/********************************************************************** 
+ * 
+ *  NAME:         WINMORPH.RC 
+ * 
+ *  DESCRIPTION:  
+ * 
+ *  M O D I F I C A T I O N   H I S T O R Y 
+ * 
+ *  version when     who what 
+ *  ------------------------------------------------------------------- 
+ *          11. 8.95 MHM added headers 
+ *  1.9470  11.12.95 MHM changed "morfstrw.rc" --> "newmorph.rc"
+ *********************************************************************/ 
+ 
+// ObjectWindows - (C) Copyright 1992 by Borland International
+
+#define WINMORPH_RC
+
+#include <c:\kielet\bc31\include\windows.h>
+#include <c:\kielet\bc31\owl\include\owlrc.h>
+#include "winmorph.rch"
+
+#include "getint.rc"
+#include "pictoptw.rc"
+#include "newmorph.rc"
+#include "animndlg.rc"
+#include "acanimcf.rc"
+#include "acmorphc.rc"
+#include "acwindow.rc"
+#include "animinfo.rc"
+
+COMMANDS MENU
+BEGIN
+ 	POPUP "&File"
+	BEGIN
+		MENUITEM "&New...\aCtrl+N" 		, CM_FILENEW
+		MENUITEM "&Open...\aCtrl+O"    	, CM_FILEOPEN
+		MENUITEM "&Save\aCtrl+S"   		, CM_FILESAVE
+		MENUITEM "Save &as..."     		, CM_FILESAVEAS
+		MENUITEM SEPARATOR
+		POPUP "&Animation"	 
+        BEGIN
+			MENUITEM "&New...\aCtrl+Alt+N"	, CM_ANIM_NEW
+			MENUITEM "&Open...\aCtrl+Alt+O"	, CM_ANIM_OPEN
+			MENUITEM "&Save\aCtrl+Alt+S"   	, CM_ANIM_SAVE
+			MENUITEM "Save &as..."      	, CM_ANIM_SAVEAS
+			MENUITEM SEPARATOR
+			MENUITEM "&Information...\aCtrl+Alt+I"	, CM_ANIM_INFO
+        END
+		MENUITEM SEPARATOR
+		MENUITEM "E&xit\aAlt+F4"       	, CM_EXIT
+	END
+
+	POPUP "&Edit"
+	BEGIN
+        MENUITEM "&Undo\aAlt+BkSp"		,CM_UNDO,GRAYED
+		MENUITEM "&Redo\aAlt+Shift+BkSp",CM_REDO,GRAYED
+		MENUITEM SEPARATOR
+		MENUITEM "Cu&t\aShift+Del"		,CM_CUT,GRAYED
+		MENUITEM "&Copy frame\aCtrl+Ins"	,CM_COPY,GRAYED
+		MENUITEM "&Copy frames"			,CM_COPY_FRAMES,GRAYED
+		MENUITEM "&Paste\aShift+Ins"	,CM_PASTE,GRAYED
+		MENUITEM "C&lear\aDel"			,CM_CLEAR
+		MENUITEM "Select &all\aCtrl+A"	,CM_SELECTALL
+		MENUITEM SEPARATOR
+		MENUITEM "Undo &buffer size..."	,CM_UNDO_BUFFER_SIZE
+		/*MENUITEM "Redo enabled"			,CM_REDO_ENABLED*/
+	END
+
+	POPUP "Fra&mes"
+	BEGIN
+		MENUITEM "&Stretch frames..."  	, CM_STRETCH_FRAMES
+		POPUP "Swap &morph meshes"
+		BEGIN
+			MENUITEM "&Start  - End "		, CM_SWITCH_FRAMES_1
+			MENUITEM "&Result - Start"	, CM_SWITCH_FRAMES_2
+			MENUITEM "&End    - Result"	, CM_SWITCH_FRAMES_3
+		END
+		/*MENUITEM "Keep Frames together",  CM_FRAMES_THE_SAME*/
+	END
+	POPUP "&Triangles" 
+	BEGIN
+		/*MENUITEM "&Triangulate selected"     	, CM_TRIANGULATE,GRAYED*/
+		MENUITEM "&Triangulate \aT"			, CM_TRIANGULATEALL
+		POPUP "&Delete triangles"
+        BEGIN
+			MENUITEM "&Between selected points\aShift+T"	, CM_DELTRIBETWEEN
+        	MENUITEM "&With selected points\aAlt+Shift+T"	, CM_DELTRIWITH
+		END
+		POPUP "&Auto-triangulate"
+		BEGIN
+			MENUITEM "&During editing"		, CM_TRI_DURING_EDIT
+			MENUITEM "&Before morphing"		, CM_TRI_BEFORE_MORPH
+			MENUITEM "&On command only"		, CM_TRI_ON_COMMAND
+		END
+    END
+	POPUP "&Points"
+    BEGIN
+		/*MENUITEM "&Attach points\aA"		, CM_ATTACHPOINTS*/
+		POPUP "&Detach points"
+		BEGIN
+			MENUITEM "One frame\aD"					,CM_DETACHPOINTS_ONE_FRAME
+			MENUITEM "Selected frames\aShift+D"		,CM_DETACHPOINTS_SEL_FRAMES
+			MENUITEM "One morphblock\aAlt+D"		,CM_DETACHPOINTS_ONE_BLOCK
+            MENUITEM "All morphblocks\aAlt+Shift+D"	,CM_DETACHPOINTS_ALL_BLOCKS
+        END
+		POPUP "&Interpolate"
+		BEGIN
+			MENUITEM "&During editing"		, CM_INT_DURING_EDIT
+			MENUITEM "&After editing"		, CM_INT_AFTER_EDIT
+		END
+		POPUP "&Grid"
+        BEGIN
+			MENUITEM "&Create grid"			, CM_CREATE_GRID
+			MENUITEM "&Automatic grid"		, CM_AUTO_GRID
+			MENUITEM "&Set grid size"		, CM_GRID_SIZE 
+		END
+		POPUP "&Compute result "
+		BEGIN
+			MENUITEM "&Interpolate" 		, CM_COMPUTE_INTERPOLATE
+			MENUITEM "&Sphere"				, CM_COMPUTE_SPHERE
+			MENUITEM "&Earth"				, CM_COMPUTE_SPHERE
+			MENUITEM "&Whirlpool"			, CM_COMPUTE_WHIRLPOOL
+			MENUITEM "&YinYang"				, CM_COMPUTE_YINYANG
+			/*MENUITEM "Cylinder"			, CM_COMPUTE_CYLINDER */
+			/*MENUITEM "Flag"				, CM_COMPUTE_FLAG */
+			/*MENUITEM "Fly-by"				, CM_COMPUTE_FLYBY */
+		END
+		MENUITEM SEPARATOR
+		MENUITEM "Automatic interpolation", CM_AUTOINTERFRAMES
+	END
+
+	POPUP "P&rojector"
+	BEGIN
+		MENUITEM "&Next frame\aRight"		, CM_ACNEXTFRAME
+		MENUITEM "&Previous frame\aLeft"	, CM_ACPREVFRAME
+        MENUITEM "Next mark\aUp"			, CM_ACNEXTMARK 
+		MENUITEM "Previous mark\aDown"		, CM_ACPREVMARK
+		MENUITEM SEPARATOR
+		MENUITEM "&Play\aP"				, CM_ACPLAY
+		MENUITEM "&Morph\aM"			, CM_ACMORPH,GRAYED
+		MENUITEM "&Stop\aS"				, CM_ACSTOP,GRAYED
+		MENUITEM "&Config"				, CM_ACCONFIG
+		MENUITEM SEPARATOR
+		MENUITEM "Set mark &in\aCtrl+Down"		, CM_ACMARKIN
+		MENUITEM "Set mark &out\aCtrl+Up"		, CM_ACMARKOUT
+	END
+
+	POPUP "&Views"
+	BEGIN
+		MENUITEM "&Make view"				, CM_MAKE_VIEW
+		MENUITEM "&Delete view"				, CM_DELETE_VIEW
+		MENUITEM SEPARATOR
+		/*MENUITEM "&Window..."	   		, CM_OPTIONS*/
+		MENUITEM "Actual &view (1:1)\aCtrl+V", CM_ACTUAL_VIEW
+		POPUP "Zoom &in"
+		BEGIN
+			MENUITEM " 1 : 1\aAlt+1"	, CM_ZOOM_IN + 1
+			MENUITEM " 2 : 1\aAlt+2"	, CM_ZOOM_IN + 2
+			MENUITEM " 3 : 1\aAlt+3"	, CM_ZOOM_IN + 3
+			MENUITEM " 4 : 1\aAlt+4", CM_ZOOM_IN + 4
+			MENUITEM " 5 : 1", CM_ZOOM_IN + 5
+			MENUITEM " 6 : 1", CM_ZOOM_IN + 6
+			MENUITEM " 7 : 1", CM_ZOOM_IN + 7
+			MENUITEM " 8 : 1", CM_ZOOM_IN + 8
+			MENUITEM " 9 : 1", CM_ZOOM_IN + 9
+			MENUITEM "10 : 1", CM_ZOOM_IN + 10
+			MENUITEM "11 : 1", CM_ZOOM_IN + 11
+			MENUITEM "12 : 1", CM_ZOOM_IN + 12
+			MENUITEM "13 : 1", CM_ZOOM_IN + 13
+			MENUITEM "14 : 1", CM_ZOOM_IN + 14
+			MENUITEM "15 : 1", CM_ZOOM_IN + 15
+			MENUITEM "16 : 1", CM_ZOOM_IN + 16
+		END
+		POPUP "Zoom &out"
+		BEGIN
+			MENUITEM "1 :  1\aAlt+Shift+1 ", CM_ZOOM_OUT + 1
+			MENUITEM "1 :  2\aAlt+Shift+2 ", CM_ZOOM_OUT + 2
+			MENUITEM "1 :  3\aAlt+Shift+3 ", CM_ZOOM_OUT + 3
+			MENUITEM "1 :  4\aAlt+Shift+4 ", CM_ZOOM_OUT + 4
+			MENUITEM "1 :  5 ", CM_ZOOM_OUT + 5
+			MENUITEM "1 :  6 ", CM_ZOOM_OUT + 6
+			MENUITEM "1 :  7 ", CM_ZOOM_OUT + 7
+			MENUITEM "1 :  8 ", CM_ZOOM_OUT + 8
+			MENUITEM "1 :  9 ", CM_ZOOM_OUT + 9
+			MENUITEM "1 : 10 ", CM_ZOOM_OUT + 10
+			MENUITEM "1 : 11 ", CM_ZOOM_OUT + 11
+			MENUITEM "1 : 12 ", CM_ZOOM_OUT + 12
+			MENUITEM "1 : 13 ", CM_ZOOM_OUT + 13
+			MENUITEM "1 : 14 ", CM_ZOOM_OUT + 14
+			MENUITEM "1 : 15 ", CM_ZOOM_OUT + 15
+			MENUITEM "1 : 16 ", CM_ZOOM_OUT + 16
+		END
+		POPUP "Viewmap &type"
+		BEGIN
+			MENUITEM "&No viewmap\aCtrl+1",		CM_VIEWMAP_TYPE + 1
+			MENUITEM "&Windows DDB\aCtrl+2", 	CM_VIEWMAP_TYPE + 2
+			MENUITEM "Fast &mapping\aCtrl+3", 	CM_VIEWMAP_TYPE + 3
+			MENUITEM "&Gray scale\aCtrl+4",		CM_VIEWMAP_TYPE + 4
+			MENUITEM "&Floyd-Steinberg\aCtrl+5",CM_VIEWMAP_TYPE + 5
+		END
+		POPUP "Set Morphmesh"
+		BEGIN
+			MENUITEM "&Start mesh"		, CM_MORPHBLOCK + 1
+			MENUITEM "&Result mesh"		, CM_MORPHBLOCK + 2
+			MENUITEM "&End mesh"		, CM_MORPHBLOCK + 3
+		END
+		POPUP "Set &Animation"
+		BEGIN
+			MENUITEM "&Start animation"			, CM_ANIMATION + 1
+			MENUITEM "&Result animation"		, CM_ANIMATION + 2
+			MENUITEM "&End animation"			, CM_ANIMATION + 3
+			MENUITEM "&Background animation"	, CM_ANIMATION + 4
+		END
+		MENUITEM "&Stretch picture with window" , CM_STRETCH_DIB,CHECKED
+		MENUITEM "Use animations &frames"		, CM_USE_ANIMFRAMES
+		MENUITEM "Show &points"					, CM_SHOW_POINTS	,CHECKED
+		MENUITEM "Show &triangles"				, CM_SHOW_TRIANGLES	,CHECKED
+	END
+
+	POPUP "&Config"
+    BEGIN
+		MENUITEM "Point si&ze..."  			, CM_SETPOINTSIZE
+		MENUITEM "Point drag size..."  		, CM_SETPOINTDRAG
+		POPUP "Point shape"
+		BEGIN
+			MENUITEM "&Rectangle"			, CM_POINT_SHAPE_RECT
+            MENUITEM "&Circle"				, CM_POINT_SHAPE_CIRCLE
+		END
+		MENUITEM "Point knot &width..."		, CM_SET_KNOT_SIZE
+		MENUITEM "Point drag start..."		, CM_POINT_DRAG_START
+		MENUITEM "Point &color..." 			, CM_POINT_COLOR
+		MENUITEM "S&elected point color..."	, CM_SELECTED_COLOR
+		MENUITEM "&Line color..."  			, CM_LINE_COLOR
+        MENUITEM "&Beep when finished"		, CM_BEEP
+	END
+
+	POPUP "&Window"
+	BEGIN
+		MENUITEM "&Cascade\aShift+F5"	, CM_CASCADECHILDREN
+		MENUITEM "&Tile\aShift+F4"		, CM_TILECHILDREN
+		MENUITEM "Arrange &icons"		, CM_ARRANGEICONS
+		MENUITEM SEPARATOR
+		MENUITEM "&Show projector"		, CM_SHOW_PROJECTOR		,CHECKED
+		/*MENUITEM SEPARATOR
+		POPUP "Select menu"
+        BEGIN
+			MENUITEM "Easy"				,CM_DUMMY	,CHECKED
+			MENUITEM "Normal"			,CM_SETMENU
+		END*/
+	END
+
+	POPUP "&Help"
+	BEGIN
+		MENUITEM "&Index\aShift+F1"			, CM_HELP_INDEX
+		MENUITEM "&Using help\aShift+F10"	, CM_HELP_ON_HELP
+		MENUITEM SEPARATOR
+		MENUITEM "&About..."				, CM_HELP_ABOUT
+	END
+END
+
+Accelerators ACCELERATORS
+BEGIN
+	VK_N		, CM_FILENEW		,CONTROL	,VIRTKEY
+	VK_O		, CM_FILEOPEN		,CONTROL	,VIRTKEY
+	VK_S		, CM_FILESAVE		,CONTROL	,VIRTKEY
+	VK_N		, CM_ANIM_NEW		,ALT,CONTROL,VIRTKEY
+	VK_O		, CM_ANIM_OPEN		,ALT,CONTROL,VIRTKEY
+	VK_S		, CM_ANIM_SAVE		,ALT,CONTROL,VIRTKEY
+    VK_I		, CM_ANIM_INFO		,ALT,CONTROL,VIRTKEY
+	VK_BACK		, CM_UNDO			,ALT		,VIRTKEY
+	VK_BACK		, CM_REDO			,ALT,SHIFT	,VIRTKEY
+	VK_DELETE	, CM_CUT			,SHIFT		,VIRTKEY
+	VK_INSERT	, CM_COPY			,CONTROL	,VIRTKEY
+	VK_INSERT	, CM_PASTE			,SHIFT		,VIRTKEY
+	VK_DELETE	, CM_CLEAR						,VIRTKEY
+    VK_A		, CM_SELECTALL		,CONTROL	,VIRTKEY
+	VK_RIGHT	, CM_ACNEXTFRAME				,VIRTKEY
+	VK_LEFT		, CM_ACPREVFRAME				,VIRTKEY
+	VK_UP		, CM_ACNEXTMARK					,VIRTKEY
+	VK_DOWN		, CM_ACPREVMARK					,VIRTKEY
+	VK_DOWN		, CM_ACMARKIN		,CONTROL	,VIRTKEY
+	VK_UP		, CM_ACMARKOUT		,CONTROL	,VIRTKEY
+	/*VK_HOME		, CM_ACFIRSTFRAME				,VIRTKEY
+    VK_END		, CM_ACLASTFRAME				,VIRTKEY*/
+	VK_M		, CM_ACMORPH					,VIRTKEY
+	VK_P		, CM_ACPLAY						,VIRTKEY
+	VK_D		, CM_DETACHPOINTS_ONE_FRAME		,VIRTKEY
+	VK_D		, CM_DETACHPOINTS_SEL_FRAMES	,SHIFT	,VIRTKEY
+	VK_D		, CM_DETACHPOINTS_ONE_BLOCK		,SHIFT	,ALT	,VIRTKEY
+	VK_D		, CM_DETACHPOINTS_ALL_BLOCKS	,SHIFT	,VIRTKEY
+	/*VK_A		, CM_ATTACHPOINTS				,VIRTKEY*/
+	VK_S		, CM_ACSTOP						,VIRTKEY
+	VK_T		, CM_TRIANGULATEALL 			,VIRTKEY
+	VK_T		, CM_DELTRIBETWEEN	,SHIFT		,VIRTKEY
+    VK_T		, CM_DELTRIWITH		,ALT,SHIFT	,VIRTKEY
+	VK_V		, CM_ACTUAL_VIEW	,CONTROL	,VIRTKEY
+	VK_1		, CM_ZOOM_IN + 1    ,ALT		,VIRTKEY
+	VK_2		, CM_ZOOM_IN + 2    ,ALT		,VIRTKEY
+	VK_3		, CM_ZOOM_IN + 3    ,ALT		,VIRTKEY
+	VK_4		, CM_ZOOM_IN + 4    ,ALT		,VIRTKEY
+	VK_1		, CM_ZOOM_OUT+ 1    ,ALT,SHIFT	,VIRTKEY
+	VK_2		, CM_ZOOM_OUT+ 2    ,ALT,SHIFT	,VIRTKEY
+	VK_3		, CM_ZOOM_OUT+ 3    ,ALT,SHIFT	,VIRTKEY
+	VK_4		, CM_ZOOM_OUT+ 4    ,ALT,SHIFT	,VIRTKEY
+	VK_1		, CM_VIEWMAP_TYPE+ 1,CONTROL	,VIRTKEY
+	VK_2		, CM_VIEWMAP_TYPE+ 2,CONTROL	,VIRTKEY
+	VK_3		, CM_VIEWMAP_TYPE+ 3,CONTROL	,VIRTKEY
+	VK_4		, CM_VIEWMAP_TYPE+ 4,CONTROL	,VIRTKEY
+	VK_5		, CM_VIEWMAP_TYPE+ 5,CONTROL	,VIRTKEY
+	VK_F1		, CM_HELP_INDEX		,SHIFT		,VIRTKEY
+	VK_F4		, CM_TILECHILDREN	,SHIFT		,VIRTKEY
+	VK_F5		, CM_CASCADECHILDREN,SHIFT		,VIRTKEY
+	VK_F10	    , CM_HELP_ON_HELP	,SHIFT		,VIRTKEY
+END
+
+About DIALOG 18, 18, 148, 80
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About WinMorph"
+BEGIN
+	CTEXT "Version  2.00 1.10 1996", -1, 4, 4, 140, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	CTEXT "All rights reserved", -1, 4, 28, 140, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	CTEXT "\251 1993 Marko Marjamaa", -1, 4, 16, 140, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	ICON "Icon", -1, 32, 44, 13, 13, WS_CHILD | WS_VISIBLE
+	CTEXT "mama@student.oulu.fi", -1, 4, 64, 140, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	PUSHBUTTON "Ok", IDOK, 92, 44, 36, 12, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+END
+
+Icon ICON PRELOAD MOVEABLE DISCARDABLE "winmorph.ico"
+
+/* End of file WINMORPH.RC */
+ 

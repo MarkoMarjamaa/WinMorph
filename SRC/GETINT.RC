@@ -1,0 +1,45 @@
+/********************************************************************** 
+ * 
+ *  NAME:         GETINT.RC 
+ * 
+ *  DESCRIPTION:  
+ * 
+ *  M O D I F I C A T I O N   H I S T O R Y 
+ * 
+ *  version when     who what 
+ *  -------------------------------------------------------------------
+ *          11. 8.95 MHM added headers 
+ * 
+ *********************************************************************/ 
+ 
+// ObjectWindows - (C) Copyright 1992 by Borland International
+
+#ifdef _WINMORPH_RC
+	#include <c:\kielet\bc31\include\windows.h>
+	#include <c:\kielet\bc31\owl\include\owlrc.h>
+	#include "winmorph.rch"
+#endif
+
+GetInteger DIALOG 18, 18, 87, 47
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GetInteger"
+BEGIN
+	EDITTEXT ID_GETINTEGER, 20, 8, 52, 12, ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP
+	PUSHBUTTON "Ok", IDOK, 8, 28, 36, 12, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+	PUSHBUTTON "Cancel", IDCANCEL, 48, 28, 32, 12, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+END
+
+GetPoint DIALOG 18, 18, 81, 52
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GetPoint"
+BEGIN
+	LTEXT "X:", -1, 4, 4, 12, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	LTEXT "Y:", -1, 4, 20, 12, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	EDITTEXT ID_GETPOINT_X, 20, 4, 56, 12, ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP
+	EDITTEXT ID_GETPOINT_Y, 20, 20, 56, 12, ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP
+	PUSHBUTTON "Ok", IDOK, 4, 36, 32, 12, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+	PUSHBUTTON "Cancel", IDCANCEL, 44, 36, 32, 12, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+END
+ 
+/* End of file GETINT.RC */
+ 

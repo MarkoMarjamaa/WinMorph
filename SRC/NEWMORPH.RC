@@ -1,0 +1,41 @@
+/**********************************************************************
+ * 
+ *  NAME:         NEWMORPH.RC 
+ * 
+ *  DESCRIPTION:  
+ * 
+ *  M O D I F I C A T I O N   H I S T O R Y 
+ * 
+ *  version when     who what
+ *  -------------------------------------------------------------------
+ *  1.9470  10.12.95 MHM created
+ * 
+ *********************************************************************/ 
+ 
+#ifdef _WINMORPH_RC
+	#include <c:\kielet\bc31\include\windows.h>
+	#include <c:\kielet\bc31\owl\include\owlrc.h>
+	#include "winmorph.rch"
+#endif
+
+NewMorphWindow DIALOG 18, 18, 126, 92
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New morphmesh"
+BEGIN
+	LTEXT "Start", -1, 4, 20, 32, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	LTEXT "Result", -1, 4, 36, 32, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	LTEXT "Final", -1, 4, 52, 32, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	LTEXT "Morphmesh", -1, 40, 4, 40, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	EDITTEXT ID_NEWMORPH_START, 40, 20, 40, 12
+	EDITTEXT ID_NEWMORPH_RESULT, 40, 36, 40, 12
+	EDITTEXT ID_NEWMORPH_END, 40, 52, 40, 12
+	LTEXT "Animation", -1, 84, 4, 36, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	RTEXT "1", ID_NEWMORPH_A_START, 92, 20, 16, 12
+	RTEXT "30", ID_NEWMORPH_A_RESULT, 92, 36, 16, 12
+	RTEXT "1", ID_NEWMORPH_A_END, 92, 52, 16, 12
+	PUSHBUTTON "Ok", IDOK, 12, 72, 44, 12, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+	PUSHBUTTON "Cancel", IDCANCEL, 68, 72, 44, 12, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+END
+
+/* End of file NEWMORPH.RC */ 
+ 

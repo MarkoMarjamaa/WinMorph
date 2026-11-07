@@ -1,0 +1,56 @@
+/**********************************************************************
+ * 
+ *  NAME:         ACWINDOW.RC 
+ * 
+ *  DESCRIPTION:  
+ * 
+ *  M O D I F I C A T I O N   H I S T O R Y 
+ * 
+ *  version when     who what 
+ *  ------------------------------------------------------------------- 
+ *           1. 3.96 MHM created
+ *********************************************************************/
+
+#ifdef _WINMORPH_RC
+	#include <c:\kielet\bc31\include\windows.h>
+	#include <c:\kielet\bc31\owl\include\owlrc.h>
+	#include "winmorph.rch"
+#endif
+
+BM_PLAY_NORMAL   BITMAP "./bmp/play___n.bmp"
+BM_PLAY_PRESSED  BITMAP "./bmp/play___p.bmp"
+BM_PLAY_FOCUSED  BITMAP "./bmp/play___f.bmp"
+BM_PLAY_DISABLED BITMAP "./bmp/play___d.bmp"
+
+BM_STOP_NORMAL   BITMAP "./bmp/stop___n.bmp"
+BM_STOP_PRESSED  BITMAP "./bmp/stop___p.bmp"
+BM_STOP_FOCUSED  BITMAP "./bmp/stop___f.bmp"
+BM_STOP_DISABLED BITMAP "./bmp/stop___d.bmp"
+
+BM_PAUSE_NORMAL   BITMAP "./bmp/pause__n.bmp"
+BM_PAUSE_PRESSED  BITMAP "./bmp/pause__p.bmp"
+BM_PAUSE_FOCUSED  BITMAP "./bmp/pause__f.bmp"
+BM_PAUSE_DISABLED BITMAP "./bmp/pause__d.bmp"
+
+BM_MARKIN_NORMAL   BITMAP "./bmp/markin_n.bmp"
+BM_MARKIN_PRESSED  BITMAP "./bmp/markin_p.bmp"
+BM_MARKIN_FOCUSED  BITMAP "./bmp/markin_f.bmp"
+BM_MARKIN_DISABLED BITMAP "./bmp/markin_d.bmp"
+
+BM_MARKOUT_NORMAL   BITMAP "./bmp/markoutn.bmp"
+BM_MARKOUT_PRESSED  BITMAP "./bmp/markoutp.bmp"
+BM_MARKOUT_FOCUSED  BITMAP "./bmp/markoutf.bmp"
+BM_MARKOUT_DISABLED BITMAP "./bmp/markoutd.bmp"
+
+BM_PREVMARK_NORMAL   BITMAP "./bmp/prevmrkn.bmp"
+BM_PREVMARK_PRESSED  BITMAP "./bmp/prevmrkp.bmp"
+BM_PREVMARK_FOCUSED  BITMAP "./bmp/prevmrkf.bmp"
+BM_PREVMARK_DISABLED BITMAP "./bmp/prevmrkd.bmp"
+
+BM_NEXTMARK_NORMAL   BITMAP "./bmp/nextmrkn.bmp"
+BM_NEXTMARK_PRESSED  BITMAP "./bmp/nextmrkp.bmp"
+BM_NEXTMARK_FOCUSED  BITMAP "./bmp/nextmrkf.bmp"
+BM_NEXTMARK_DISABLED BITMAP "./bmp/nextmrkd.bmp"
+
+/* End of file ACWINDOW.RC */
+ 

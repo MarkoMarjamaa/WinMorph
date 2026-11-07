@@ -1,0 +1,164 @@
+// winmorph.rch
+
+#ifndef WINMORPH_RCH
+#define WINMORPH_RCH
+
+// Winmorph main menu
+// File menu
+#define CM_ANIM_NEW          1
+#define CM_ANIM_OPEN      	 2
+#define CM_ANIM_SAVE      	 3
+#define CM_ANIM_SAVEAS       4
+#define CM_PREVIOUS_FILES	10
+
+// Edit menu
+#define CM_UNDO				20
+#define CM_REDO				21
+#define CM_CUT  			22
+#define CM_COPY             23
+#define CM_COPY_FRAMES		24
+#define CM_PASTE            25
+#define CM_CLEAR            26
+#define	CM_SELECTALL		27
+#define CM_UNDO_BUFFER_SIZE 28
+#define CM_REDO_ENABLED		29
+
+// Frames 
+#define CM_STRETCH_FRAMES   40
+#define CM_FRAMES_THE_SAME	41
+#define CM_SWITCH_FRAMES_1	42
+#define CM_SWITCH_FRAMES_2	43
+#define CM_SWITCH_FRAMES_3	44
+
+// Triangles
+#define CM_TRIANGULATE      60
+#define CM_TRIANGULATEALL	61
+#define CM_DELTRIBETWEEN    62
+#define CM_DELTRIWITH       63
+#define CM_TRI_DURING_EDIT  64
+#define CM_TRI_BEFORE_MORPH 65
+#define CM_TRI_ON_COMMAND   66
+
+// Points
+#define CM_DETACHPOINTS_ONE_FRAME	80
+#define CM_DETACHPOINTS_SEL_FRAMES  81
+#define CM_DETACHPOINTS_ONE_BLOCK   82
+#define CM_DETACHPOINTS_ALL_BLOCKS  83
+#define CM_ATTACHPOINTS			84
+#define CM_INT_DURING_EDIT  	85
+#define CM_INT_AFTER_EDIT   	86
+#define CM_CREATE_GRID			87
+#define CM_AUTO_GRID        	88
+#define CM_GRID_SIZE        	89
+#define CM_COMPUTE_INTERPOLATE 	90
+#define CM_COMPUTE_SPHERE		91
+#define CM_COMPUTE_EARTH		92
+#define CM_COMPUTE_CYLINDER		92
+#define CM_COMPUTE_FLAG			93
+#define CM_COMPUTE_FLYBY		94
+#define CM_COMPUTE_WHIRLPOOL	95
+#define CM_COMPUTE_YINYANG		96
+
+#define CM_AUTOINTERFRAMES		99	
+
+// AC Window commands
+#define CM_ACFIRSTCOMMAND   100
+#define CM_ACFRAMES         100
+#define CM_ACPLAY        	101
+#define CM_ACSTOP        	102
+#define CM_ACPREVFRAME      103
+#define CM_ACNEXTFRAME      104
+#define CM_ACPREVMARK       105
+#define CM_ACNEXTMARK       106
+#define CM_ACMARKIN         107
+#define CM_ACMARKOUT	    108
+#define CM_ACMORPH          109
+#define CM_ACCONFIG         110
+#define CM_ACLASTCOMMAND    110
+
+#define CM_ACFIRSTFRAME		111
+#define CM_ACLASTFRAME		112
+
+// View
+
+#define CM_OPTIONS          120
+#define CM_ACTUAL_VIEW		121
+#define CM_ZOOM_IN          130
+#define CM_ZOOM_OUT        150
+#define CM_VIEWMAP_TYPE    170
+#define CM_MORPHBLOCK	   190
+#define CM_ANIMATION	   210
+	
+#define CM_STRETCH_DIB	   		230	
+#define CM_USE_ANIMFRAMES  		231
+#define CM_SHOW_POINTS     		232
+#define CM_SHOW_TRIANGLES  		233
+#define CM_SETPOINTSIZE    		234
+#define CM_SETPOINTDRAG    		235
+#define CM_POINT_DRAG_START		236
+#define CM_POINT_SHAPE_RECT     237
+#define CM_POINT_SHAPE_CIRCLE   238
+#define CM_SET_KNOT_SIZE		239
+#define CM_POINT_COLOR     		240
+#define CM_SELECTED_COLOR  		241
+#define CM_LINE_COLOR      		242
+#define CM_ANIM_INFO			243
+#define CM_BEEP				   	244
+
+#define CM_SHOW_PROJECTOR  250
+
+#define CM_MAKE_VIEW	   260
+#define CM_DELETE_VIEW	   261		
+
+#define CM_DUMMY		   262
+#define CM_SETMENU		   263
+
+// Help
+#define CM_HELP_ABOUT      270
+#define CM_HELP_ON_HELP    271
+#define CM_HELP_INDEX      272
+
+// Picturewindows messages
+#define ID_PLAYING         400 
+
+// Picture window Options dialog box
+#define ID_ZOOM_X	       410
+#define ID_ZOOM_Y          411
+#define CM_NO_ZOOMING      412
+#define ID_STRETCH         413
+#define ID_USE_VIEWMAP     414
+
+#define ID_VIEWMAPS        415
+#define ID_AUTOUPDATE      416
+
+// GetPoint dialog box
+#define ID_GETINTEGER      421
+#define ID_GETPOINT_X      422
+#define ID_GETPOINT_Y      423
+
+// AC Context configuration IDs
+#define ID_PLAYMODE        430
+#define ID_PLAYDELAY       431
+#define ID_MORPHMODE       432
+#define ID_ANTIALIASING	   433
+
+// MorphStretch dialogbox
+#define ID_NEWMORPH_START    441
+#define ID_NEWMORPH_RESULT   442
+#define ID_NEWMORPH_END      443
+#define ID_NEWMORPH_A_START  444
+#define ID_NEWMORPH_A_RESULT 445
+#define ID_NEWMORPH_A_END    446
+
+// Animation New dialogbox
+#define ID_ANIM_NEW_X        451
+#define ID_ANIM_NEW_Y        452
+#define ID_ANIM_NEW_FRAMES   453
+
+// Animation Information
+#define ID_ANIM_FILENAME	 460
+#define ID_ANIM_RES_X		 461
+#define ID_ANIM_RES_Y		 462
+#define ID_ANIM_FRAMES		 463
+ 
+#endif

@@ -1,0 +1,41 @@
+/**********************************************************************
+ *
+ *  NAME:         ACMORPHC.RC 
+ * 
+ *  DESCRIPTION:  
+ * 
+ *  M O D I F I C A T I O N   H I S T O R Y 
+ * 
+ *  version when     who what 
+ *  ------------------------------------------------------------------- 
+ *          22.01.96 MHM created
+ * 
+ *********************************************************************/ 
+ 
+// ObjectWindows - (C) Copyright 1992 by Borland International
+
+#ifdef _WINMORPH_RC
+	#include <c:\kielet\bc31\include\windows.h>
+	#include <c:\kielet\bc31\owl\include\owlrc.h>
+	#include "winmorph.rch"
+#endif
+
+ACMorphContextCfgDlg DIALOG 18, 18, 116, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Morph configuration"
+BEGIN
+	LTEXT "Play mode:", -1, 8, 8, 44, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	CONTROL "", ID_PLAYMODE, "COMBOBOX", CBS_DROPDOWNLIST | WS_VSCROLL | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 52, 8, 56, 52
+	LTEXT "Play delay:", -1, 8, 24, 44, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	CONTROL "", ID_PLAYDELAY, "EDIT", ES_RIGHT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 52, 24, 40, 12
+	LTEXT "ms.", -1, 92, 24, 16, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	LTEXT "Morph mode:", -1, 8, 40, 44, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	CONTROL "", ID_MORPHMODE, "COMBOBOX", CBS_DROPDOWNLIST | WS_VSCROLL | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 52, 40, 56, 44
+	LTEXT "Supersampling:", -1, 8, 56, 52, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	CONTROL "", ID_ANTIALIASING, "COMBOBOX", CBS_DROPDOWNLIST | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 60, 56, 48, 44
+	PUSHBUTTON "Ok", IDOK, 16, 80, 36, 12, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+	PUSHBUTTON "Cancel", IDCANCEL, 60, 80, 40, 12, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+END
+
+/* End of file ACMORPHC.RC */
+ 

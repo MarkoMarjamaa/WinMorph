@@ -1,0 +1,34 @@
+/********************************************************************** 
+ * 
+ *  NAME:         MORFCFGW.RC 
+ * 
+ *  DESCRIPTION:  
+ * 
+ *  M O D I F I C A T I O N   H I S T O R Y
+ * 
+ *  version when     who what 
+ *  ------------------------------------------------------------------- 
+ *          11. 8.95 MHM added headers 
+ * 
+ *********************************************************************/ 
+ 
+
+MorphConfigDlg DIALOG 7, 17, 131, 109
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "DIALOG_1"
+BEGIN
+	LTEXT "Interpolate", -1, 8, 8, 40, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	CONTROL "during editing", 102, "BUTTON", BS_AUTORADIOBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 52, 4, 64, 12
+	CONTROL "after editing", 103, "BUTTON", BS_AUTORADIOBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 52, 16, 64, 12
+	GROUPBOX "Triangulate", 104, 36, 32, 84, 52, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+	CONTROL "after editing", 105, "BUTTON", BS_AUTORADIOBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 48, 44, 64, 12
+	CONTROL "before morphing", 106, "BUTTON", BS_AUTORADIOBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 48, 56, 64, 12
+	RADIOBUTTON "only on command", 107, 48, 68, 64, 12, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+	PUSHBUTTON "Ok", IDOK, 12, 88, 40, 14, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+	PUSHBUTTON "Cancel", IDCANCEL, 68, 88, 44, 14, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+END
+
+ 
+ 
+/* End of file MORFCFGW.RC */ 
+ 

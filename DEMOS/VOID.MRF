@@ -1,0 +1,20 @@
+WinMorph
+Morphmesh
+Pictures (
+	)
+Points 0 (
+	Startmesh
+		(
+		Frames = 1
+		)
+	Endmesh
+		(
+		Frames = 1
+		)
+	Resultmesh
+		(
+		Frames = 30
+		)
+	)
+Triangles  (
+	)

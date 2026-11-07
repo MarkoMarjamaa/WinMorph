@@ -1,0 +1,40 @@
+/********************************************************************** 
+ * 
+ *  NAME:         ANIMNDLG.RC 
+ * 
+ *  DESCRIPTION:  
+ * 
+ *  M O D I F I C A T I O N   H I S T O R Y 
+ * 
+ *  version when     who what 
+ *  ------------------------------------------------------------------- 
+ *          11. 8.95 MHM added headers 
+ * 
+ *********************************************************************/ 
+ 
+// ObjectWindows - (C) Copyright 1992 by Borland International
+
+#ifdef _WINMORPH_RC
+	#include <c:\kielet\bc31\include\windows.h>
+	#include <c:\kielet\bc31\owl\include\owlrc.h>
+	#include "winmorph.rch"
+#endif
+
+AnimationNewDlg DIALOG 18, 18, 114, 84
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New Animation"
+BEGIN
+	RTEXT "Frames:", -1, 8, 4, 40, 12, SS_RIGHT | WS_CHILD | WS_VISIBLE | WS_GROUP
+	EDITTEXT ID_ANIM_NEW_FRAMES, 56, 4, 44, 12
+	RTEXT "Resolution:", -1, 8, 20, 40, 12, SS_RIGHT | WS_CHILD | WS_VISIBLE | WS_GROUP
+	RTEXT "X:", -1, 40, 32, 12, 12, SS_RIGHT | WS_CHILD | WS_VISIBLE | WS_GROUP
+	RTEXT "Y:", -1, 40, 48, 12, 12, SS_RIGHT | WS_CHILD | WS_VISIBLE | WS_GROUP
+	EDITTEXT ID_ANIM_NEW_X, 56, 32, 44, 12, ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP
+	EDITTEXT ID_ANIM_NEW_Y, 56, 48, 44, 12, ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP
+	PUSHBUTTON "Ok", IDOK, 16, 68, 32, 12, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+	PUSHBUTTON "Cancel", IDCANCEL, 64, 68, 32, 12, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+END
+ 
+ 
+/* End of file ANIMNDLG.RC */ 
+ 

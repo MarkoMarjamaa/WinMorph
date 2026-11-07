@@ -1,0 +1,42 @@
+/**********************************************************************
+ * 
+ *  NAME:         PIC_OPT.RC 
+ * 
+ *  DESCRIPTION:  
+ * 
+ *  M O D I F I C A T I O N   H I S T O R Y 
+ * 
+ *  version when     who what 
+ *  ------------------------------------------------------------------- 
+ *          11. 8.95 MHM added headers 
+ * 
+ *********************************************************************/ 
+ 
+// ObjectWindows - (C) Copyright 1992 by Borland International
+
+#ifdef _WINMORPH_RC
+	#include <c:\kielet\bc31\include\windows.h>
+	#include <c:\kielet\bc31\owl\include\owlrc.h>
+	#include "winmorph.rch"
+#endif
+
+PictureOptionsDlg DIALOG 18, 18, 128, 89
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Window options"
+BEGIN
+	CONTROL "", ID_ZOOM_X, "EDIT", ES_RIGHT | ES_AUTOVSCROLL | ES_AUTOHSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 60, 4, 28, 12
+	EDITTEXT ID_ZOOM_Y, 96, 4, 28, 12, ES_LEFT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP
+	LTEXT "Zoom resolution:", -1, 4, 5, 52, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	CTEXT "x", -1, 88, 5, 8, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	PUSHBUTTON "Set normal resolution", CM_NO_ZOOMING, 52, 20, 72, 12, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+	CONTROL "Stretch picture to window", ID_STRETCH, "BUTTON", BS_AUTOCHECKBOX | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 4, 32, 100, 12
+	CONTROL "AutoUpdate Viewmaps", ID_AUTOUPDATE, "BUTTON", BS_AUTOCHECKBOX | WS_CHILD | NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP, 4, 44, 100, 8
+	CONTROL "", ID_VIEWMAPS, "COMBOBOX", CBS_DROPDOWNLIST | WS_CHILD | WS_VISIBLE | WS_VSCROLL | WS_TABSTOP, 52, 56, 72, 48
+	LTEXT "Viewmap type:", -1, 4, 56, 44, 12, WS_CHILD | WS_VISIBLE | WS_GROUP
+	PUSHBUTTON "Ok", IDOK, 8, 72, 52, 12, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+	PUSHBUTTON "Cancel", IDCANCEL, 68, 72, 52, 12, WS_CHILD | WS_VISIBLE | WS_TABSTOP
+END
+ 
+ 
+/* End of file PIC_OPT.RC */ 
+ 
